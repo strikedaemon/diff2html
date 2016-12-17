@@ -369,3 +369,15 @@
 .selecting-right td.d2h-code-side-linenumber *::selection {
   background: transparent;
 }
+
+.table-inner {
+  width: 1000px;
+}
+
+.both-sides {
+  width: 995px;
+}
+
+.side {
+  width: 400px;
+}
