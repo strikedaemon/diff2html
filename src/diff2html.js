@@ -56,6 +56,21 @@
   };
 
   /*
+   * Generates the html for the files list. The config parameter configures the output/input formats and other options.
+   */
+  Diff2Html.prototype.getPrettyHtmlFilesList = function(diffInput, config) {
+
+    var configOrEmpty = config || {};
+
+    var diffJson = diffInput;
+    if (!configOrEmpty.inputFormat || configOrEmpty.inputFormat === 'diff') {
+      diffJson = diffParser.generateDiffJson(diffInput, configOrEmpty);
+    }
+
+    return htmlPrinter.generateFileListSummary(diffJson, configOrEmpty);
+  };
+
+  /*
    * Deprecated methods - The following methods exist only to maintain compatibility with previous versions
    */
 
